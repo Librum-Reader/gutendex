@@ -298,6 +298,10 @@ class Command(BaseCommand):
             log('  Detecting stale directories...')
             if not os.path.exists(MOVE_TARGET_PATH):
                 os.makedirs(MOVE_TARGET_PATH)
+
+            if not os.path.exists(MOVE_SOURCE_PATH):
+                os.makedirs(MOVE_SOURCE_PATH)
+            
             new_directory_set = get_directory_set(MOVE_SOURCE_PATH)
             old_directory_set = get_directory_set(MOVE_TARGET_PATH)
             stale_directory_set = old_directory_set - new_directory_set
