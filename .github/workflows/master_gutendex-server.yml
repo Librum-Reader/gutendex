@@ -22,9 +22,6 @@ jobs:
         with:
           python-version: '3.11'
 
-      - name: Install apt packages
-        run: sudo apt-get install libpq-dev
-
       - name: Create and start virtual environment
         run: |
           python -m venv venv
